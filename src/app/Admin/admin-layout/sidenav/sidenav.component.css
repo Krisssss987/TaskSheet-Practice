@@ -1,0 +1,140 @@
+.sidenav {
+    background: #242524;
+    transition: all .5s ease;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    margin-top: 0px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidenav::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.sidenav {
+    scrollbar-width: none;
+}
+
+.sidenav {
+    -ms-overflow-style: none;
+}
+
+.sidenav-collapsed {
+    width: 16.5625rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 2.5rem 0.938rem 2rem 0.938rem;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: #242524;
+    z-index: 10;
+}
+
+mat-toolbar {
+    background: #242524;
+}
+
+.logo-text, .logo-text-2 {
+    margin-left: 0.75rem;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.logo-text {
+    color: #e0dfdd;
+}
+
+.btn-close {
+    margin-left: auto;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.btn-close .fa-times {
+    color: #fff;
+    font-size: 24px;
+}
+
+.second-logo-container {
+    padding: 2rem 0.938rem;
+    width: 100%;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    background: #242524;
+    z-index: 10;
+}
+
+.sidenav-nav {
+    flex-grow: 1;
+    list-style: none;
+    padding: 0.938rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidenav-nav-item {
+    width: 100%;
+    margin-bottom: 0.625rem;
+}
+
+.sidenav-nav-link {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    color: black;
+    text-decoration: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-left: -2rem;
+    padding-left: 2rem;
+    transition: all .3s ease;
+}
+
+.sidenav-link-icon {
+    font-size: 22px;
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 0.5rem;
+    text-align: center;
+}
+
+.sidenav-link-text {
+    margin-left: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+}
+
+.sidenav-nav-item:hover .sidenav-nav-link {
+    background-color: #e0dfdd;
+    color: black;
+}
+
+.active {
+    background-color: #e0dfdd;
+}
+
+.active .sidenav-link-icon,
+.active .sidenav-link-text {
+    color:black;
+}

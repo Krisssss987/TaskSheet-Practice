@@ -1,0 +1,56 @@
+.body {
+    width: calc(100% - 5rem);
+    height: 100vh;
+    margin-left: 5rem;
+    z-index: 0;
+    position: relative;
+    top: 0;
+    transition: all .5s ease;
+    background: #e0dfdd;
+}
+
+.body-trimmed {
+    width: calc(100% - 16.5625rem);
+    margin-left: 16.5625rem;
+}
+
+.body-md-screen {
+    width: calc(100% - 5rem);
+    margin-left: 5rem;
+}
+.header{
+    padding-top: 25px;
+    margin-bottom: 40px;
+}
+
+.user-profile {
+    position: relative;
+    margin-top: -5px;
+}
+
+.user-image {
+    border: 1px solid black;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.menu-icon {
+  margin-right: 5px;
+}
+
+.menu-item-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 550;
+}
+
+.menu-item {
+    font-size: 17px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}

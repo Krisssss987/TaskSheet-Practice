@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    font-family: "Monoton";
+    font-size: 8rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    word-spacing: 30px;
+    letter-spacing: -5px;
+    padding: 3rem 0;
+}
+
+@media (max-width: 778px) {
+    h1{
+        font-size: 2.5rem;
+    }
+}

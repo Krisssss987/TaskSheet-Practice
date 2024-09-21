@@ -1,0 +1,84 @@
+<div style="height: 100vh; font-family: Quicksand;">
+    <app-header></app-header>
+
+    <div style="display: flex; justify-content: center;">
+        <h3 style="text-align: center; margin-bottom: 30px;">What do you need to add in your Tasksheet?</h3>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <input [(ngModel)]="newTask" type="text" placeholder="Task ...">
+        <button (click)="addTask()">Add</button>
+    </div>
+
+    <div style="max-width: 600px; margin: 0 auto;">
+        <ul>
+          <li
+            *ngFor="let task of tasks; let i = index"
+            style="display: flex; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #eee;"
+          >
+            <div style="display: flex; align-items: center;">
+              <span style="margin-right: 10px; font-weight: bold;">{{ i + 1 }}.</span>
+              
+              <input
+                type="checkbox"
+                [(ngModel)]="task.isCompleted"
+                (change)="updateCompletion()"
+                style="margin-right: 10px;"
+              />
+      
+              <input
+                *ngIf="task.isEditing"
+                type="text"
+                [(ngModel)]="task.title"
+                style="padding: 5px; border-radius: 5px; border: 1px solid #ccc; width: 200px;"
+              />
+              <span
+                *ngIf="!task.isEditing"
+                [ngStyle]="{ 'text-decoration': task.isCompleted ? 'line-through' : 'none' }"
+              >
+                {{ task.title }}
+              </span>
+            </div>
+      
+            <div>
+              <button
+                *ngIf="!task.isEditing"
+                (click)="editTask(i)"
+                style="margin-right: 10px; padding: 5px 10px;"
+              >
+                Edit
+              </button>
+              <button
+                *ngIf="task.isEditing"
+                (click)="saveTask(i)"
+                style="margin-right: 10px; padding: 5px 10px;"
+              >
+                Save
+              </button>
+              <button
+                (click)="deleteTask(i)"
+                style="background-color: red; color: white; padding: 5px 10px; border: none; border-radius: 5px;"
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Footer Section -->
+      <div style="max-width: 600px; margin: 20px auto; text-align: center; padding: 10px; border-top: 1px solid #ddd;">
+        <ng-container *ngIf="tasks.length === 0; else taskSummary">
+          <p>Try adding some tasks.</p>
+        </ng-container>
+      
+        <ng-template #taskSummary>
+          <p>
+            You have {{ tasks.length }} task
+            <span *ngIf="tasks.length > 1">s</span>
+            from which {{ completedTasks }} are completed
+            ({{ completionPercentage }}%)
+          </p>
+        </ng-template>
+      </div>
+</div>

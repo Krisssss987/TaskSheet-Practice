@@ -1,0 +1,20 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+    <mat-toolbar class="logo-container">
+        <div (click)="toggleCollapse()">
+            <img src="../../../../assets/Logo-removebg-preview.png" style="height: 55px;">
+        </div>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">Task Sheet</div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()"></button>
+    </mat-toolbar>
+    
+    <ul class="sidenav-nav mt-3">
+        <li class="sidenav-nav-item" *ngFor="let data of navData">
+            <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" 
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                <mat-icon class="sidenav-link-icon">{{data.icon}}</mat-icon>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
